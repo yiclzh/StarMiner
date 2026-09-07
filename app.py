@@ -26,7 +26,7 @@ star_radius = st.slider("Star Radius (solar radii)", 0.5, 1.5, 1.0)
 planet_radius = st.slider("Planet Radius (Jupiter radii)", 0.05, 1.5, 0.5)
 period = st.slider("Period (days)", 1.0, 50.0, 10.0)
 impact_param = st.slider("Impact Parameter", 0.0, 0.99, 0.0)
-noise_std = st.slider("Noise Std", 0.0005, 0.02, 0.001)
+noise_std = st.slider("Noise Std", 0.0005, 0.02, 0.001, step=0.0005)
 
 time_days = np.linspace(-2, 2, 1000)
 
