@@ -12,8 +12,8 @@ X, y = generate_dataset(3000, time_days, noise_std=0.001, rng=rng)
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratify=y, random_state=0)
 scaler = StandardScaler()
-joblib.dump(scaler, 'scaler.pkl')
 X_train_scaled = scaler.fit_transform(X_train)
+joblib.dump(scaler, 'scaler.pkl')
 X_test_scaled = scaler.transform(X_test)
 
 print(X_train_scaled.shape)
