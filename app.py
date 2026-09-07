@@ -38,10 +38,10 @@ flux = simulate_light_curve(time_days, 0, duration_hours, depth)
 
 # Add noise
 rng = np.random.default_rng()
-flux_noisy = rng.normal(0, noise_std, size=flux.shape)
+flux_noisy = flux + rng.normal(0, noise_std, size=flux.shape)
 
 fig, ax = plt.subplots()
-ax.scatter(time_days, flux_noisy, s=3, alpha=0.5)
+ax.plot(time_days, flux_noisy)
 ax.set_xlabel("time (days)")
 ax.set_ylabel("relative brightness")
 st.pyplot(fig)
